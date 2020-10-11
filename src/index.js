@@ -1,10 +1,11 @@
 import express from "express";
-import { path } from "./paths.js";
-
-const PORT = 5000;
+import path from "./paths.js";
+import { mainRouter } from "./routers/mainRouter.js";
+import { userRouter } from "./routers/userRouter.js";
 
 const app = express();
 
-app.get(path.HOME, (req, res) => res.send("home"));
+app.use(path.HOME, mainRouter);
+app.use(path.ID, userRouter);
 
-app.listen(PORT, () => console.log(`listening to http://localhost:${PORT}`));
+export default app;

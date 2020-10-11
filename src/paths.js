@@ -1,13 +1,15 @@
 const home = "/";
 const login = "/login";
-const logout = "/:id/logout";
+const logout = "/logout";
 const signUp = "/signUp";
 const editPage = "/:id/editPage";
 const reviewPage = "/:id/reviewPage";
 const resultPage = "/:id/resultPage";
 const getQRCode = "/:id/QRCode";
+const about = "/about";
+const id = "/:id";
 
-export const path = {
+const path = {
   HOME: home,
   LOGIN: login,
   LOGOUT: logout,
@@ -16,4 +18,8 @@ export const path = {
   REVIEWPAGE: reviewPage,
   RESULTPAGE: resultPage,
   GETQRCODE: getQRCode,
+  ABOUT: about,
+  ID: id,
 };
+
+export default path;

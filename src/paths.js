@@ -1,6 +1,6 @@
 const home = "/";
 const login = "/login";
-const logout = "/logout";
+const logout = "/:id/logout";
 const signUp = "/signUp";
 const editPage = "/:id/editPage";
 const reviewPage = "/:id/reviewPage";

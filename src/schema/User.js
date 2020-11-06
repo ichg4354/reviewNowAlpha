@@ -1,9 +1,12 @@
-import mongoose, { mongo } from "mongoose"
+import mongoose from "mongoose"
+import passportLocalMogoose from "passport-local-mongoose"
 
-
-const answerSchema = new mongoose.Schema({
-    question: String
+const userSchema = new mongoose.Schema({
+    id: String,
+    buisnessName: String,
+    phoneNumber: Number,
 })
 
+userSchema.plugin(passportLocalMogoose, { usernameField: "id" })
 
-export const Answer = mongoose.model("User", userSchema)
+export const User = mongoose.model("User", userSchema)

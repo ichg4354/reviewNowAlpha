@@ -5,7 +5,10 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
-        form(action="/login", method="post")
+       form(action="/join", method="post")
             input(type="text" name="id" placeholder="아이디 입력")
             input(type="text" name="password1" placeholder="비밀번호 입력")
+            input(type="text" name="password2" placeholder="비밀번호 재확인")
+            input(type="text" name="buisnessName" placeholder="사업체 이름")
+            input(type="text" name="phoneNumber" placeholder="전화번호 입력")
             button(type="submit") Submit

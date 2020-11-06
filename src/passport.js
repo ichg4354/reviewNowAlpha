@@ -1,5 +1,5 @@
-import User from "./Models/User"
 import passport from "passport"
+import User from "./schema/User"
 
 passport.use(User.createStrategy())
 

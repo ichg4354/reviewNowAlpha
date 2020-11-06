@@ -2,8 +2,6 @@ import { User } from "../schema/User.js"
 import passport from "passport"
 import path from "../paths.js"
 
-
-
 export const getJoin = (req, res) => {
     res.render("join")
 }

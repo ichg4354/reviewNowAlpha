@@ -8,7 +8,6 @@ export const mainRouter = express.Router();
 mainRouter.get(path.HOME, getHome);
 mainRouter.get(path.ABOUT, (req, res) => res.send("ABOUT"));
 
-mainRouter.get(path.LOGIN, getLogin);
 mainRouter.get(path.LOGIN, postLogin);
 
 mainRouter.get(path.JOIN, getJoin);

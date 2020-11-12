@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/init.js"
+    "dev:server": "nodemon --exec babel-node src/init.js",
+    "dev:assets": "gulp assets"
   },
   "author": "Luis Choi",
   "license": "ISC",
@@ -13,23 +14,34 @@
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5"
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5"
   },
   "dependencies": {
+    "babelify": "^10.0.0",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
+    "del": "^5.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-bro": "^2.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-sass": "^4.1.0",
     "helmet": "^4.1.1",
     "mongoose": "^5.10.13",
     "morgan": "^1.10.0",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "uglifyify": "^5.0.2"
   }
 }

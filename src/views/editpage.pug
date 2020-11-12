@@ -7,3 +7,6 @@ html(lang="en")
     body
         h1 #{isLogged.username}'s EDITPAGE
         h3 MAINMENU OPTIONS
+        form(action="/editPage", method="post")
+            input(type="text",name="options")
+            button(type="submit")

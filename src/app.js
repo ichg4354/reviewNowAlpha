@@ -33,6 +33,7 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(express.static('src'));
 app.set("view engine", "pug");
 app.set("views", "src/views");
 

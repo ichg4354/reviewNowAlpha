@@ -6,7 +6,7 @@ import del from "del"
 const path = {
     js: {
         watch: "src/assets/js/**/*",
-        src: "src/assets/js/index.js",
+        src: "src/assets/js/main/*",
         dest: "src/static/js"
     },
     scss: {
@@ -16,7 +16,7 @@ const path = {
     }
 }
 
-const clean = () => del(["static"]);
+const clean = async () => await del(["src/static"]);
 
 const js = () =>
     gulp

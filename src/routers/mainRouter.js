@@ -16,7 +16,9 @@ mainRouter.post(path.JOIN, postJoin, postLogin);
 
 mainRouter.get(path.LOGOUT, postLogout)
 
-mainRouter.get(path.EDITPAGE, (req, res) => res.send("EDITPAGE"));
+mainRouter.get(path.EDITPAGE, (req, res) => res.render("editPage"));
+
+
 mainRouter.get(path.REVIEWPAGE, (req, res) => res.send("REVIEWPAGE"));
 mainRouter.get(path.RESULTPAGE, (req, res) => res.send("RESULTPAGE"));
 mainRouter.get(path.GETQRCODE, (req, res) => res.send("GETQRCODE"));

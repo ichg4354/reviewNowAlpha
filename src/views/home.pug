@@ -6,9 +6,13 @@ html(lang="en")
         title Document
     body
         if(isLogged)
-            a(href='/logout') LOGOUT
+            .header
+                a(href='/logout') LOGOUT
+            .main
+                a(href=`/${isLogged._id}/editPage`) EDITPAGE
         else
-            a(href="/login") LOG IN
-            a(href="/join") JOIN
-        
+            .header
+                a(href="/login") LOG IN
+                a(href="/join") JOIN
+            
             

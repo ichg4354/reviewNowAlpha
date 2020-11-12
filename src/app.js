@@ -8,6 +8,8 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import passport from "passport"
 import session from "express-session"
+import mongoStrore from "connect-mongo"
+import "./passport.js"
 
 const app = express();
 
@@ -17,9 +19,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan("dev"));
-app.use(session({ secret: "asdf", saveUninitialized: true, resave: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(session({
+    secret: "anything",
+    resave: true,
+    saveUninitialized: false,
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 app.set("view engine", "pug");
 app.set("views", "src/views");
 

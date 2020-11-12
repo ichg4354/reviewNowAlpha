@@ -1,5 +1,6 @@
+
+import { User, userSchema } from "./schema/User.js"
 import passport from "passport"
-import User from "./schema/User"
 
 passport.use(User.createStrategy())
 

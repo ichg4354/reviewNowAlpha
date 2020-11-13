@@ -7,6 +7,7 @@ html(lang="en")
     body
         h1 #{isLogged.username}'s EDITPAGE
         h3 MAINMENU OPTIONS
-        form(action="/editPage", method="post")
-            input(type="text",name="options")
-            button(type="submit")
+        form(action=`/${isLogged._id}/editPage`, method="post")#editPage__form
+            input(type="text",name="options")#editPage__input
+            button(type="submit")#editPage__submit SUBMIT
+        script(src="/static/js/editPage.js")

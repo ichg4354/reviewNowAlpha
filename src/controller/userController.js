@@ -9,6 +9,7 @@ export const getJoin = (req, res) => {
 export const postJoin = async (req, res, next) => {
     const body = req.body
     const { username, password, password2, buisnessName, phoneNumber } = body
+    console.log(body)
     console.log()
     if (password !== password2) {
         res.status(400)

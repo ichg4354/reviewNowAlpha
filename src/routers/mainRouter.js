@@ -17,6 +17,7 @@ mainRouter.post(path.JOIN, postJoin, postLogin);
 mainRouter.get(path.LOGOUT, postLogout)
 
 mainRouter.get(path.EDITPAGE, (req, res) => res.render("editPage"));
+mainRouter.post(path.EDITPAGE, (req, res) => console.log(req.body));
 
 
 mainRouter.get(path.REVIEWPAGE, (req, res) => res.send("REVIEWPAGE"));

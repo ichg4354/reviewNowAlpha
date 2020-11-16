@@ -1,6 +1,6 @@
 import express from "express";
 import path from "../paths.js";
-import { getJoin, postJoin, getLogin, getHome, postLogin, postLogout } from "../controller/userController.js";
+import { getJoin, postJoin, getLogin, getHome, postLogin, postLogout, postEditPage, getEditPage } from "../controller/userController.js";
 
 
 export const mainRouter = express.Router();
@@ -16,8 +16,8 @@ mainRouter.post(path.JOIN, postJoin, postLogin);
 
 mainRouter.get(path.LOGOUT, postLogout)
 
-mainRouter.get(path.EDITPAGE, (req, res) => res.render("editPage"));
-mainRouter.post(path.EDITPAGE, (req, res) => console.log(req.body.options));
+mainRouter.post(path.EDITPAGE, postEditPage);
+mainRouter.get(path.EDITPAGE, getEditPage);
 
 
 mainRouter.get(path.REVIEWPAGE, (req, res) => res.send("REVIEWPAGE"));

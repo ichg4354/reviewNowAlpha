@@ -54,3 +54,10 @@ export const getHome = (req, res) => {
     res.render('home')
     console.log(req.user)
 }
+
+
+export const getEditPage = (req, res) => res.render('editPage')
+export const postEditPage = (req, res) => {
+    const options = req.body.options
+    // 몽모디비에 user model 에 options 연결 이후 editPage.pug에서 보여주기
+}

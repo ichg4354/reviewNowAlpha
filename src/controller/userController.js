@@ -1,6 +1,7 @@
 import { User } from "../schema/User.js"
 import passport from "passport"
 import path from "../paths.js"
+import { MainMenu } from "../schema/MainMenu.js"
 
 export const getJoin = (req, res) => {
     res.render("join")
@@ -57,7 +58,15 @@ export const getHome = (req, res) => {
 
 
 export const getEditPage = (req, res) => res.render('editPage')
-export const postEditPage = (req, res) => {
-    const options = req.body.options
-    // 몽모디비에 user model 에 options 연결 이후 editPage.pug에서 보여주기
+
+export const postEditPage = async (req, res) => {
+    const body = req.body
+    const loggedUser = await User.findById(req.user._id)
+    if (body.optionName === "mainMenu") {
+        const mainMenu = await MainMenu.create({
+            options: body.options
+        })
+        loggedUser.mainMenu = mainMenu
+        console.log(loggedUser)
+    }
 }

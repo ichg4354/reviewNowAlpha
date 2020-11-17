@@ -4,7 +4,7 @@ const form = document.getElementById("editPage__form")
 const input = document.getElementById("editPage__input")
 const submit = document.getElementById("editPage__submit")
 const ul = document.getElementById("editPage__ul")
-const save = document.getElementById("editPage__save")
+const mainMenuSave = document.getElementById("editPage__mainMenuSave")
 
 const getUserId = () => {
     const href = window.location.href.split("/")
@@ -48,14 +48,16 @@ const removeSelectedList = (e) => {
     e.target.parentNode.remove()
 }
 
-const postData = (newOption) => {
+//POST DATA TO BACKEND
+const postData = (newOption, optionName) => {
     const id = getUserId()
     Axios.post(`/${id}/editPage`, {
-        options: newOption
+        options: newOption,
+        optionName: optionName
     })
 }
 
-save.addEventListener('click', () => postData(optionList))
+mainMenuSave.addEventListener('click', () => postData(optionList, "mainMenu"))
 
 input.addEventListener('input', () => {
     // console.log(input.value)

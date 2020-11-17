@@ -5,7 +5,7 @@ export const userSchema = new mongoose.Schema({
     id: String,
     buisnessName: String,
     phoneNumber: Number,
-    options: {
+    mainMenu: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "MainMenu"
     }

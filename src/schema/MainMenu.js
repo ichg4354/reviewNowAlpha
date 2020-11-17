@@ -6,7 +6,7 @@ export const mainMenuSchema = new mongoose.Schema({
         ref: 'User'
     },
     options: Object,
-    answers: String
+    answers: [{ type: String }]
 })
 
 export const MainMenu = mongoose.model("MainMenu", mainMenuSchema)

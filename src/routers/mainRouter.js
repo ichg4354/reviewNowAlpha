@@ -1,6 +1,6 @@
 import express from "express";
 import path from "../paths.js";
-import { getJoin, postJoin, getLogin, getHome, postLogin, postLogout, postEditPage, getEditPage } from "../controller/userController.js";
+import { getJoin, postJoin, getLogin, getHome, postLogin, postLogout, postEditPage, getEditPage, getReviewPage } from "../controller/userController.js";
 
 
 export const mainRouter = express.Router();
@@ -20,6 +20,6 @@ mainRouter.post(path.EDITPAGE, postEditPage);
 mainRouter.get(path.EDITPAGE, getEditPage);
 
 
-mainRouter.get(path.REVIEWPAGE, (req, res) => res.send("REVIEWPAGE"));
+mainRouter.get(path.REVIEWPAGE, getReviewPage);
 mainRouter.get(path.RESULTPAGE, (req, res) => res.send("RESULTPAGE"));
 mainRouter.get(path.GETQRCODE, (req, res) => res.send("GETQRCODE"));

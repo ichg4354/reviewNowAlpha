@@ -67,6 +67,14 @@ export const postEditPage = async (req, res) => {
             options: body.options
         })
         loggedUser.mainMenu = mainMenu
+        loggedUser.save()
         console.log(loggedUser)
     }
+}
+
+export const getReviewPage = async (req, res) => {
+    const loggedUser = await User.findById(req.user._id).populate("mainMenu")
+    const mainMenuOptions = loggedUser.mainMenu.options
+    mainMenuOptions.forEach(each => console.log(each.value))
+    res.render("reviewPage", { mainMenuOptions })
 }

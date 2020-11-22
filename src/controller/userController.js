@@ -57,7 +57,11 @@ export const getHome = (req, res) => {
 }
 
 
-export const getEditPage = (req, res) => res.render('editPage')
+export const getEditPage = async (req, res) => {
+    const loggedUser = await User.findById(req.user._id).populate("mainMenu")
+    const mainMenuOptions = loggedUser.mainMenu.options
+    res.render('editPage', { mainMenuOptions })
+}
 
 export const postEditPage = async (req, res) => {
     const body = req.body
@@ -75,6 +79,5 @@ export const postEditPage = async (req, res) => {
 export const getReviewPage = async (req, res) => {
     const loggedUser = await User.findById(req.user._id).populate("mainMenu")
     const mainMenuOptions = loggedUser.mainMenu.options
-    mainMenuOptions.forEach(each => console.log(each.value))
     res.render("reviewPage", { mainMenuOptions })
 }

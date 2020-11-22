@@ -57,6 +57,9 @@ const postData = (newOption, optionName) => {
     })
 }
 
+
+
+
 mainMenuSave.addEventListener('click', () => postData(optionList, "mainMenu"))
 
 input.addEventListener('input', () => {
@@ -64,3 +67,15 @@ input.addEventListener('input', () => {
 })
 
 
+const init = () => {
+    console.log(document)
+}
+
+const updateOptionsList = () => {
+    if (optionList.length == 0) {
+
+    }
+}
+
+
+init()
